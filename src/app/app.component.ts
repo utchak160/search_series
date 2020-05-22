@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'series';
+  title = null;
+  res = undefined;
+
+
+  onSubmit() {
+    if (this.title % 2 === 0) {
+      this.res = (this.title * this.title) - 1;
+    } else {
+      this.res = (this.title * this.title) + 1;
+    }
+  }
 }
